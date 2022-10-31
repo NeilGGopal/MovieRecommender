@@ -27,6 +27,7 @@ function Header() {
 
         <div>
           <Routes>
+            <Route path="" element={<Landing/>} />
             <Route path="/recommend" element={<Recommend/>} />
             <Route path="/planner" element={<Planner/>} />
             <Route path="/rater" element={<Rater/>} />
