@@ -4,11 +4,11 @@ let movie = new mongoose.Schema({
     type: String
   },
   length: {
-    type: String
+    type: Number
   },
   year: {
-    type: String
+    type: Number
   }
 })
 
-module.exports = movie = mongoose.model('movie', movie)
+module.exports = movie = mongoose.model('movies', movie)
