@@ -9,16 +9,16 @@ function Recommend() {
           <br></br>
           <header className="hdr">Recommender</header>
           <br></br>
-          <Button variant="btn btn-danger">Genre</Button>
+          <Button variant="btn btn-outline-danger">Genre</Button>
           &nbsp;
           &nbsp;
-          <Button variant="btn btn-danger">Actor</Button>
+          <Button variant="btn btn-outline-danger">Actor</Button>
           &nbsp;
           &nbsp;
-          <Button variant="btn btn-danger">Region</Button>
+          <Button variant="btn btn-outline-danger">Region</Button>
           &nbsp;
           &nbsp;
-          <Button variant="btn btn-danger">Rating </Button>
+          <Button variant="btn btn-outline-danger">Rating </Button>
     </div>
   ); 
 }

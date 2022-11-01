@@ -11,12 +11,12 @@ function Landing() {
         <img src={logo} className="App-logo" alt="logo" />
           <header className="mainhdr">SHUFFLIX</header>
           <Link to="/recommend"> 
-            <Button variant="btn btn-danger">Recommender</Button>
+            <Button variant="btn btn-outline-danger">Recommender</Button>
           </Link>
           &nbsp;
           &nbsp;
           <Link to="/planner"> 
-            <Button variant="btn btn-danger">Planner</Button>
+            <Button variant="btn btn-outline-danger">Planner</Button>
           </Link>   
     </div>
   ); 
