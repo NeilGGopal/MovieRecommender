@@ -21,4 +21,14 @@ function Results() {
   ); 
 }
 
+/*
+ * Annabelle, 99, 2014
+ * Insidious, 101, 2010
+ * Get Out, 104, 2017
+ * The Empty Man, 137, 2020
+ * Hereditary, 127, 2018
+ * A Nightmare on Elm Street, 91, 1984
+ * Halloween, 91, 1978
+ */
+
 export default Results;
