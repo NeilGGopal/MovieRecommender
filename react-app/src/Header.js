@@ -8,6 +8,7 @@ import Planner from './components/Planner';
 import Recommend from './components/Recommend';
 import Rater from './components/Rater';
 import Landing from './components/Landing';
+import Results from './components/Results';
 
 
 function Header() {
@@ -32,6 +33,7 @@ function Header() {
             <Route path="/planner" element={<Planner/>} />
             <Route path="/rater" element={<Rater/>} />
             <Route path="/landing" element={<Landing/>} />
+            <Route path="/results" element={<Results/>} />
           </Routes>
         </div>
       </div>
