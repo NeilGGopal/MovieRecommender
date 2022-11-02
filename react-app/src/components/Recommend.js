@@ -19,6 +19,13 @@ function Recommend() {
           &nbsp;
           &nbsp;
           <Button variant="btn btn-outline-danger">Rating </Button>
+          <br></br>
+          <br></br>
+          <div className='search'>
+            <input class="form-control me-2" type="search" placeholder="Find a movie..." aria-label="Search"/> 
+            <Button as={Link} to="/results" class="btn btn-outline-success" type="submit">Search</Button>
+          </div>
+          
     </div>
   ); 
 }

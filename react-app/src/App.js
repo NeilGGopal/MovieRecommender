@@ -13,7 +13,7 @@ function App() {
         {/* <Landing /> */}
       {/* </main> */}
     </div>
-  );git 
+  );
 }
 
 export default App;
