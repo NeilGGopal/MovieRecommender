@@ -7,8 +7,10 @@ function Planner() {
         <br></br>
         <header className="hdr">Planner</header>
          <br></br>
-         <button class="btn btn-outline-danger">Remove Movie from Watchlist</button>
-         <button class="btn btn-outline-danger">Add Movie to Watchlist</button>
+         <button class="btn btn-outline-danger">Remove Movie</button>
+         &nbsp;
+         &nbsp;
+         <button class="btn btn-outline-danger">Add Movie</button>
     </div>
   ); 
 }
