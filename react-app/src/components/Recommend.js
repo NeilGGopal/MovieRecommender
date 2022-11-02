@@ -25,7 +25,6 @@ function Recommend() {
             <input class="form-control me-2" type="search" placeholder="Find a movie..." aria-label="Search"/> 
             <Button as={Link} to="/results" class="btn btn-outline-success" type="submit">Search</Button>
           </div>
-          
     </div>
   ); 
 }
