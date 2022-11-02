@@ -16,9 +16,8 @@ const data = [
 
 function Results() {
   return (
-    <div className="land">
+    <div className="land" align="center">
         <img src={logo} className="App-logo" alt="logo" />
-          <header className="mainhdr">SHUFFLIX</header>
           <table>
         <tr>
           <th>Movie Name</th>

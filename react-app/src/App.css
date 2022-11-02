@@ -10,6 +10,19 @@
   height: 30vmin;
   pointer-events: none;
 }
+table {
+  border: 1px solid grey;
+  width: 800px;
+  height: 200px;
+}
+  
+th {
+  border-bottom: 1px solid black;
+}
+  
+td {
+  text-align: left;
+}
 
 
 .App-header {
