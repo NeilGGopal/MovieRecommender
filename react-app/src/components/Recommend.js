@@ -32,7 +32,7 @@ function Recommend() {
           <br></br>
           <div className='search'>
             <input class="form-control me-2" type="search" placeholder="Find a movie..." aria-label="Search"/> 
-            <button as={Link} to="/results" class="btn btn-outline-success" type="submit">Search</button>
+            <a href="/results" class="btn btn-outline-success" type="submit">Search</a>
           </div>
     </div>
     
