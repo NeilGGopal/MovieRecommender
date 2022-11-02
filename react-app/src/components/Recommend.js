@@ -14,7 +14,7 @@ const data = [
 
 function Recommend() {
   return (
-    <div className="recommend">
+    <div className="recommend" align="center">
           <br></br>
           <header className="hdr">Recommender</header>
           <br></br>
