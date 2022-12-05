@@ -7,6 +7,7 @@ app.use(cors())
 app.use(express.json({ extended: false }))
 // app.use('/api/movieModel', require('./api/movie'))
 const Movie = require('./db/movie')
+const Actor = require('./db/actor')
 // get driver connection
 const dbo = require('./db/conn')
 
@@ -22,6 +23,14 @@ app.post('/create', async (req, res) => {
   const movieModel = new Movie(movie)
   await movieModel.save()
   res.json(movieModel)
+})
+
+app.post('/create-actor', async (req, res) => {
+  const actor = {}
+  actor.name = req.body.name
+  const actorModel = new Actor(actor)
+  await actorModel.save()
+  res.json(actorModel)
 })
 
 app.listen(port, () => {
