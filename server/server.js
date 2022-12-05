@@ -9,6 +9,7 @@ app.use(express.json({ extended: false }))
 const Movie = require('./db/movie')
 const Actor = require('./db/actor')
 const Rating = require('./db/rating')
+const Region = require('./db/region')
 // get driver connection
 const dbo = require('./db/conn')
 
@@ -41,6 +42,15 @@ app.post('/create-rating', async (req, res) => {
   const ratingModel = new Rating(rating)
   await ratingModel.save()
   res.json(ratingModel)
+})
+
+app.post('/create-region', async (req, res) => {
+  const region = {}
+  region.name = req.body.name
+  region.language = req.body.language
+  const regionModel = new Region(region)
+  await regionModel.save()
+  res.json(regionModel)
 })
 
 app.listen(port, () => {
