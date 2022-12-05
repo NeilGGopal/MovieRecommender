@@ -7,16 +7,22 @@ function Planner() {
         <br></br>
         <header className="hdr">Planner</header>
          <br></br>
-         <button class="btn btn-outline-danger">Remove Movie</button>
+
          &nbsp;
          &nbsp;
           <form>
-            <label for="mname">Movie Name:</label><br></br>
-            <input id="mname" type="text"></input><br></br>
-            <label for="mlength">Movie Length (Minutes):</label><br></br>
-            <input id="mlength" type="text"></input><br></br>
-            <label for="myear">Movie Year</label><br></br>
-            <input id="myear" type="text"></input><br></br>
+          <fieldset className="form-group" style={{marginLeft:"500px", marginRight:"500px"}}>
+              <input type="text" className="form-control" placeholder="Enter movie name..." />
+            </fieldset>
+            <br></br>
+            <fieldset className="form-group" style={{marginLeft:"500px", marginRight:"500px"}}>
+              <input type="text" className="form-control" placeholder="Enter movie length (minutes)" />
+            </fieldset>
+            <br></br>
+            <fieldset className="form-group" style={{marginLeft:"500px", marginRight:"500px"}}>
+              <input type="text" className="form-control" placeholder="Enter movie year" />
+            </fieldset>
+            <br></br>
           </form>
          <button class="btn btn-outline-danger">Add Movie</button>
     </div>
