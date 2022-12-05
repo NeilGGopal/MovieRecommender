@@ -5,7 +5,7 @@ require('dotenv').config({ path: './config.env' })
 const port = process.env.PORT || 6000
 app.use(cors())
 app.use(express.json({ extended: false }))
-app.use('/api/movieModel', require('./api/movie'))
+// app.use('/api/movieModel', require('./api/movie'))
 const Movie = require('./db/movie')
 // get driver connection
 const dbo = require('./db/conn')
