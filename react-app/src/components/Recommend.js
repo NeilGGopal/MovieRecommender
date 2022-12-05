@@ -30,10 +30,18 @@ function Recommend() {
           <Button variant="btn btn-outline-danger">Rating </Button>
           <br></br>
           <br></br>
-          <div className='search'>
-            <input class="form-control me-2" type="search" placeholder="Find a movie..." aria-label="Search"/> 
-            <a href="/results" class="btn btn-outline-success" type="submit">Search</a>
-          </div>
+          <fieldset className='control-form me-2'>
+            <div>
+              <input
+                style={{width: "300px", marginTop: "10px", height:'40px', borderRadius:'5px'}}
+                type="text"
+                placeholder="   Find a movie..."
+              />
+              &nbsp; &nbsp;
+              <a href="/results" class="btn btn-outline-success" type="submit">Search</a>
+            </div> 
+            
+          </fieldset>
     </div>
     
   ); 
