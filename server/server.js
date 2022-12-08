@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 require('dotenv').config({ path: './config.env' })
-const port = process.env.PORT || 6000
+const port = process.env.PORT || 5500
 app.use(cors())
 app.use(express.json({ extended: false }))
 const Movie = require('./db/movie')
@@ -20,6 +20,7 @@ app.post('/create', async (req, res) => {
   movie.year = req.body.year
   const movieModel = new Movie(movie)
   await movieModel.save()
+  res.header('Access-Control-Allow-Origin')
   res.json(movieModel)
 })
 

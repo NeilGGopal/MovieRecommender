@@ -50,15 +50,7 @@ export default class Planner extends Component {
       year: this.state.year
     }
 
-    axios(
-      {
-        method: 'POST',
-        url: 'https://localhost:6000/create',
-        data: newMovie
-      }).then(res => console.log(res.data))
-      .catch(function (error) {
-        console.log(error)
-      })
+    axios.post('http://localhost:5500/create', newMovie).then(res => console.log(res.data))
     this.setState({
       name: '',
       length: 0,
