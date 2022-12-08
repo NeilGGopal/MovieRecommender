@@ -15,7 +15,7 @@ export default class Planner extends Component {
       name: '',
       length: '',
       year: '',
-      button: 1
+      button: 0
     }
   }
 
@@ -82,8 +82,8 @@ export default class Planner extends Component {
             <input type="text" className="form-control" placeholder="Enter movie year" value={this.state.year} onChange={this.onChangeYear}/>
           </fieldset>
           <br></br>
-          <button class="btn btn-outline-danger" name='btn' value='remove' type="submit" onClick={() => (this.state.button = 1)}>Remove Movie</button>
-          <button class="btn btn-outline-danger" name='btn' value='add' type="submit" onClick={() => (this.state.button = 2)}>Add Movie</button>
+          <button class="btn btn-outline-danger" type="submit" onClick={() => (this.setState({ button: 1 }))}>Remove Movie</button>
+          <button class="btn btn-outline-danger" type="submit" onClick={() => (this.setState({ button: 2 }))}>Add Movie</button>
         </form>
       </div>
     )
