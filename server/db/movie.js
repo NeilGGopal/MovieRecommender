@@ -11,6 +11,9 @@ let movie = new mongoose.Schema({
   },
   genre: {
     type: String
+  },
+  region: {
+    type: String
   }
 })
 

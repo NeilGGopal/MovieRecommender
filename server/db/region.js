@@ -5,6 +5,9 @@ let region = new mongoose.Schema({
   },
   language: {
     type: String
+  },
+  movie: {
+    type: String
   }
 })
 

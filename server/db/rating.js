@@ -5,6 +5,9 @@ let rating = new mongoose.Schema({
   },
   personal_rating: {
     type: String
+  },
+  movie: {
+    type: String
   }
 })
 
