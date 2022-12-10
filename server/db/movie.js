@@ -8,6 +8,12 @@ let movie = new mongoose.Schema({
   },
   year: {
     type: Number
+  },
+  genre: {
+    type: String
+  },
+  region: {
+    type: String
   }
 })
 
