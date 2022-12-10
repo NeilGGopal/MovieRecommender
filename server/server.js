@@ -50,7 +50,7 @@ app.post('/delete-movie', (req, res) => {
     }
     return res.status(200).send(`Item with name '${itemName}', length '${itemLength}', year value2 '${itemYear}' was deleted.`)
   })
- })
+})
 
 app.post('/create-actor', async (req, res) => {
   const actor = {}
