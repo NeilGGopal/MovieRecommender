@@ -21,6 +21,8 @@ app.post('/create', async (req, res) => {
   movie.name = req.body.name
   movie.length = req.body.length
   movie.year = req.body.year
+  movie.genre = req.body.genre
+  movie.region = req.body.region
   const movieModel = new Movie(movie)
   await movieModel.save()
   res.header('Access-Control-Allow-Origin')
