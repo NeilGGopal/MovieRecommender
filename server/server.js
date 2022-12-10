@@ -9,8 +9,20 @@ const Movie = require('./db/movie')
 // get driver connection
 const dbo = require('./db/conn')
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.get('/get-movie', (req, res) => {
+  const itemName = req.body.name
+  const itemLength = req.body.length
+  const itemYear = req.body.year
+
+  Movie.findOne({ name: itemName , length: itemLength, year: itemYear }, (err, item) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    if (!item) {
+      return res.status(404).send(`Item with name '${itemName}', length '${itemLength}', and year '${itemYear}' was not found.`)
+    }
+    return res.status(200).send(item)
+  })
 })
 
 app.post('/create', async (req, res) => {
