@@ -28,6 +28,18 @@ app.get('/get-movie', (req, res) => {
   })
 })
 
+app.get('/find-all-movies', (req, res) => {
+  Movie.find((err, item) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    if (!item) {
+      return res.status(404).send('Here are all of the movie items.')
+    }
+    return res.status(200).send(item)
+  })
+})
+
 app.post('/create', async (req, res) => {
   const movie = {}
   movie.name = req.body.name
