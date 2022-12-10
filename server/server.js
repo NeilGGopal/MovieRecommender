@@ -14,7 +14,7 @@ app.get('/get-movie', (req, res) => {
   const itemLength = req.body.length
   const itemYear = req.body.year
 
-  Movie.findOne({ name: itemName , length: itemLength, year: itemYear }, (err, item) => {
+  Movie.findOne({ name: itemName, length: itemLength, year: itemYear }, (err, item) => {
     if (err) {
       return res.status(500).send(err)
     }
@@ -34,6 +34,19 @@ app.post('/create', async (req, res) => {
   await movieModel.save()
   res.header('Access-Control-Allow-Origin')
   res.json(movieModel)
+})
+
+app.post('/delete-movie', (req, res) => {
+  const itemName = req.body.name
+  const itemLength = req.body.length
+  const itemYear = req.body.year
+
+  Movie.findOneAndDelete({ name: itemName, length: itemLength, year: itemYear }, (err, item) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    return res.status(200).send(`Item with name '${itemName}', length '${itemLength}', year value2 '${itemYear}' was deleted.`)
+  })
 })
 
 app.listen(port, () => {

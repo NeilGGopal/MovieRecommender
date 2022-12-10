@@ -61,8 +61,7 @@ export default class Planner extends Component {
         year: 0
       })
     } else {
-      console.log('test bb')
-      axios.delete('http://localhost:5500/delete-movie', newMovie).then(res => console.log(res.data))
+      axios.post('http://localhost:5500/delete-movie', newMovie).then(res => console.log(res.data))
       this.setState({
         name: '',
         length: 0,
