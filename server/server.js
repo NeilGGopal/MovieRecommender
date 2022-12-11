@@ -79,6 +79,22 @@ Movie.find(animationQuery, (err, items) => {
   animationQuery.results = items
 })
 
+app.get('/get-actor', (req, res) => {
+  const itemName = req.body.name
+  const itemMovie = req.body.movie
+  const itemRegion = req.body.region
+
+  Actor.findOne({ name: itemName, movie: itemMovie, region: itemRegion }, (err, item) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    if (!item) {
+      return res.status(404).send(`Item with name '${itemName}', movie '${itemMovie}', and region '${itemRegion}' was not found.`)
+    }
+    return res.status(200).send(item)
+  })
+})
+
 app.get('/get-movie', (req, res) => {
   const itemName = req.body.name
   const itemLength = req.body.length
