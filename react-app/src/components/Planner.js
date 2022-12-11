@@ -19,11 +19,14 @@ export default class Planner extends Component {
       year: '',
       genre: '',
       region: '',
-      movies: [],
       button: 0
     }
-
-    axios.get('http://localhost:5500/find-all-movies').then(res => console.log(res))
+    axios.get('http://localhost:5500/find-all-movies').then(
+      res => res.data.forEach((movie) => {
+        console.log(movie)
+        return movie
+      })
+    )
   }
 
   onChangeName (e) {

@@ -34,7 +34,7 @@ app.get('/find-all-movies', (req, res) => {
       return res.status(500).send(err)
     }
     if (!item) {
-      return res.status(404).send('Here are all of the movie items.')
+      return res.status(404).send('There are no items in the database / the database does not exist')
     }
     return res.status(200).send(item)
   })
