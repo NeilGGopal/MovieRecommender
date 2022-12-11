@@ -16,8 +16,11 @@ app.get('/get-movie', (req, res) => {
   const itemName = req.body.name
   const itemLength = req.body.length
   const itemYear = req.body.year
+  const itemGenre = req.body.genre
+  const itemRegion = req.body.region
+  const itemActor = req.body.actor
 
-  Movie.findOne({ name: itemName, length: itemLength, year: itemYear }, (err, item) => {
+  Movie.findOne({ name: itemName, length: itemLength, year: itemYear, genre: itemGenre, region: itemRegion, actor: itemActor }, (err, item) => {
     if (err) {
       return res.status(500).send(err)
     }
@@ -47,6 +50,7 @@ app.post('/create', async (req, res) => {
   movie.year = req.body.year
   movie.genre = req.body.genre
   movie.region = req.body.region
+  movie.actor = req.body.actor
   const movieModel = new Movie(movie)
   await movieModel.save()
   res.header('Access-Control-Allow-Origin')
@@ -57,8 +61,11 @@ app.post('/delete-movie', (req, res) => {
   const itemName = req.body.name
   const itemLength = req.body.length
   const itemYear = req.body.year
+  const itemGenre = req.body.genre
+  const itemRegion = req.body.region
+  const itemActor = req.body.actor
 
-  Movie.findOneAndDelete({ name: itemName, length: itemLength, year: itemYear }, (err, item) => {
+  Movie.findOneAndDelete({ name: itemName, length: itemLength, year: itemYear, genre: itemGenre, region: itemRegion, actor: itemActor }, (err, item) => {
     if (err) {
       return res.status(500).send(err)
     }

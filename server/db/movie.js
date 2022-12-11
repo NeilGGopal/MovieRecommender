@@ -14,6 +14,9 @@ let movie = new mongoose.Schema({
   },
   region: {
     type: String
+  },
+  actor: {
+    type: String
   }
 })
 
