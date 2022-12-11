@@ -12,6 +12,73 @@ const Region = require('./db/region')
 // get driver connection
 const dbo = require('./db/conn')
 
+// Prepared Statements
+const horrorQuery = { genre: 'Horror' }
+Movie.find(horrorQuery, (err, items) => {
+  if (err) throw err
+  horrorQuery.results = items
+})
+
+const fantasyQuery = { genre: 'Fantasy' }
+Movie.find(fantasyQuery, (err, items) => {
+  if (err) throw err
+  fantasyQuery.results = items
+})
+
+const romanceQuery = { genre: 'Romance' }
+Movie.find(romanceQuery, (err, items) => {
+  if (err) throw err
+  romanceQuery.results = items
+})
+
+const dramaQuery = { genre: 'Drama' }
+Movie.find(dramaQuery, (err, items) => {
+  if (err) throw err
+  dramaQuery.results = items
+})
+
+const actionQuery = { genre: 'Action' }
+Movie.find(actionQuery, (err, items) => {
+  if (err) throw err
+  actionQuery.results = items
+})
+
+const comedyQuery = { genre: 'Comedy' }
+Movie.find(comedyQuery, (err, items) => {
+  if (err) throw err
+  comedyQuery.results = items
+})
+
+const adventureQuery = { genre: 'Adventure' }
+Movie.find(adventureQuery, (err, items) => {
+  if (err) throw err
+  adventureQuery.results = items
+})
+
+const documentaryQuery = { genre: 'Documentary' }
+Movie.find(documentaryQuery, (err, items) => {
+  if (err) throw err
+  documentaryQuery.results = items
+})
+
+const internationalQuery = { genre: 'International' }
+Movie.find(internationalQuery, (err, items) => {
+  if (err) throw err
+  internationalQuery.results = items
+})
+
+const familyQuery = { genre: 'Family' }
+Movie.find(familyQuery, (err, items) => {
+  if (err) throw err
+  familyQuery.results = items
+})
+
+const animationQuery = { genre: 'Animation' }
+Movie.find(animationQuery, (err, items) => {
+  if (err) throw err
+  animationQuery.results = items
+})
+
 app.get('/get-movie', (req, res) => {
   const itemName = req.body.name
   const itemLength = req.body.length
