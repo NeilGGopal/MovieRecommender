@@ -178,6 +178,27 @@ app.post('/delete-movie', (req, res) => {
     }
     return res.status(200).send(`Item with name '${itemName}', length '${itemLength}', year value2 '${itemYear}' was deleted.`)
   })
+
+  Actor.findOneAndDelete({ name: itemActor }, (err, item) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    return res.status(200).send(`Actor with name '${itemName}' was deleted.`)
+  })
+
+  Region.findOneAndDelete({ name: itemRegion }, (err, item) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    return res.status(200).send(`Region with name '${itemRegion}' was deleted.`)
+  })
+
+  Genre.findOneAndDelete({ name: itemGenre }, (err, item) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    return res.status(200).send(`Genre with name '${itemGenre}' was deleted.`)
+  })
 })
 
 app.post('/create-actor', async (req, res) => {
