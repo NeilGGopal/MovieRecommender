@@ -19,11 +19,17 @@ Movie.find(horrorQuery, (err, items) => {
   if (err) throw err
   horrorQuery.results = items
 })
+app.get('/get-horror', (req, res) => {
+  return res.status(200).send(horrorQuery.results)
+})
 
 const fantasyQuery = { genre: 'Fantasy' }
 Movie.find(fantasyQuery, (err, items) => {
   if (err) throw err
   fantasyQuery.results = items
+})
+app.get('/get-fantasy', (req, res) => {
+  return res.status(200).send(fantasyQuery.results)
 })
 
 const romanceQuery = { genre: 'Romance' }
@@ -31,11 +37,17 @@ Movie.find(romanceQuery, (err, items) => {
   if (err) throw err
   romanceQuery.results = items
 })
+app.get('/get-romance', (req, res) => {
+  return res.status(200).send(romanceQuery.results)
+})
 
 const dramaQuery = { genre: 'Drama' }
 Movie.find(dramaQuery, (err, items) => {
   if (err) throw err
   dramaQuery.results = items
+})
+app.get('/get-drama', (req, res) => {
+  return res.status(200).send(dramaQuery.results)
 })
 
 const actionQuery = { genre: 'Action' }
@@ -43,11 +55,17 @@ Movie.find(actionQuery, (err, items) => {
   if (err) throw err
   actionQuery.results = items
 })
+app.get('/get-action', (req, res) => {
+  return res.status(200).send(actionQuery.results)
+})
 
 const comedyQuery = { genre: 'Comedy' }
 Movie.find(comedyQuery, (err, items) => {
   if (err) throw err
   comedyQuery.results = items
+})
+app.get('/get-comedy', (req, res) => {
+  return res.status(200).send(comedyQuery.results)
 })
 
 const adventureQuery = { genre: 'Adventure' }
@@ -55,11 +73,17 @@ Movie.find(adventureQuery, (err, items) => {
   if (err) throw err
   adventureQuery.results = items
 })
+app.get('/get-adventure', (req, res) => {
+  return res.status(200).send(adventureQuery.results)
+})
 
 const documentaryQuery = { genre: 'Documentary' }
 Movie.find(documentaryQuery, (err, items) => {
   if (err) throw err
   documentaryQuery.results = items
+})
+app.get('/get-documentary', (req, res) => {
+  return res.status(200).send(documentaryQuery.results)
 })
 
 const internationalQuery = { genre: 'International' }
@@ -67,17 +91,26 @@ Movie.find(internationalQuery, (err, items) => {
   if (err) throw err
   internationalQuery.results = items
 })
+app.get('/get-international', (req, res) => {
+  return res.status(200).send(internationalQuery.results)
+})
 
 const familyQuery = { genre: 'Family' }
 Movie.find(familyQuery, (err, items) => {
   if (err) throw err
   familyQuery.results = items
 })
+app.get('/get-family', (req, res) => {
+  return res.status(200).send(familyQuery.results)
+})
 
 const animationQuery = { genre: 'Animation' }
 Movie.find(animationQuery, (err, items) => {
   if (err) throw err
   animationQuery.results = items
+})
+app.get('/get-animation', (req, res) => {
+  return res.status(200).send(animationQuery.results)
 })
 
 app.get('/get-actor', (req, res) => {
@@ -152,7 +185,7 @@ app.post('/create', async (req, res) => {
   const genre = {}
   genre.name = req.body.genre
   const genreModel = new Genre(genre)
-  
+
   await regionModel.save()
   await actorModel.save()
   await movieModel.save()
