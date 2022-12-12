@@ -9,6 +9,7 @@ const Movie = require('./db/movie')
 const Actor = require('./db/actor')
 const Rating = require('./db/rating')
 const Region = require('./db/region')
+const Genre = require('./db/genre')
 // get driver connection
 const dbo = require('./db/conn')
 
