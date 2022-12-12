@@ -21,7 +21,6 @@ function Header() {
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/recommend">Recommender</Nav.Link>
               <Nav.Link as={Link} to="/planner">Planner</Nav.Link>
-              <Nav.Link as={Link} to="/rater">Rater</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
