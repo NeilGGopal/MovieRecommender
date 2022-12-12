@@ -84,9 +84,6 @@ export default class Recommend extends Component {
           &nbsp;
           &nbsp;
           <button className="btn btn-outline-danger" type="submit" onClick={() => (this.setState({ button: 3 }))}>Region</button>
-          &nbsp;
-          &nbsp;
-          <button className="btn btn-outline-danger" type="submit" onClick={() => (this.setState({ button: 4 }))}>Rating</button>
           <br></br>
           <br></br>
         </form>

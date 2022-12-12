@@ -149,6 +149,33 @@ app.get('/get-india', (req, res) => {
   return res.status(200).send(indiaQuery.results)
 })
 
+const christianBaleQuery = { actor: 'Christian Bale' }
+Movie.find(christianBaleQuery, (err, items) => {
+  if (err) throw err
+  christianBaleQuery.results = items
+})
+app.get('/get-christian-bale', (req, res) => {
+  return res.status(200).send(christianBaleQuery.results)
+})
+
+const leonardoDiCaprioQuery = { actor: 'Leonardo DiCaprio' }
+Movie.find(leonardoDiCaprioQuery, (err, items) => {
+  if (err) throw err
+  leonardoDiCaprioQuery.results = items
+})
+app.get('/get-leonardo-dicaprio', (req, res) => {
+  return res.status(200).send(leonardoDiCaprioQuery.results)
+})
+
+const willFerrellQuery = { actor: 'Will Ferrell' }
+Movie.find(willFerrellQuery, (err, items) => {
+  if (err) throw err
+  willFerrellQuery.results = items
+})
+app.get('/get-will-ferrell', (req, res) => {
+  return res.status(200).send(willFerrellQuery.results)
+})
+
 app.get('/get-actor', (req, res) => {
   const itemName = req.body.name
   const itemMovie = req.body.movie
