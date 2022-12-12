@@ -20,10 +20,6 @@ export default class Planner extends Component {
       year: '',
       genre: '',
       region: '',
-<<<<<<< HEAD
-      button: 0
-    }
-=======
       actor: '',
       button: 0
     }
@@ -52,7 +48,6 @@ export default class Planner extends Component {
         document.getElementById("main-table").appendChild(row)
       })
     )
->>>>>>> 9735a995f3120a3e44ab8bd248f6315cf4aa28ac
   }
 
   onChangeName (e) {
