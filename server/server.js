@@ -149,33 +149,6 @@ app.get('/get-india', (req, res) => {
   return res.status(200).send(indiaQuery.results)
 })
 
-const christianBaleQuery = { actor: 'Christian Bale' }
-Movie.find(christianBaleQuery, (err, items) => {
-  if (err) throw err
-  christianBaleQuery.results = items
-})
-app.get('/get-christian-bale', (req, res) => {
-  return res.status(200).send(christianBaleQuery.results)
-})
-
-const leonardoDiCaprioQuery = { actor: 'Leonardo DiCaprio' }
-Movie.find(leonardoDiCaprioQuery, (err, items) => {
-  if (err) throw err
-  leonardoDiCaprioQuery.results = items
-})
-app.get('/get-leonardo-dicaprio', (req, res) => {
-  return res.status(200).send(leonardoDiCaprioQuery.results)
-})
-
-const willFerrellQuery = { actor: 'Will Ferrell' }
-Movie.find(willFerrellQuery, (err, items) => {
-  if (err) throw err
-  willFerrellQuery.results = items
-})
-app.get('/get-will-ferrell', (req, res) => {
-  return res.status(200).send(willFerrellQuery.results)
-})
-
 app.get('/get-actor', (req, res) => {
   const itemName = req.body.name
   const itemMovie = req.body.movie
@@ -208,6 +181,19 @@ app.get('/get-movie', (req, res) => {
       return res.status(404).send(`Item with name '${itemName}', length '${itemLength}', and year '${itemYear}' was not found.`)
     }
     return res.status(200).send(item)
+  })
+})
+
+app.post('/get-movies-from-actor', async (req, res) => {
+  const itemActor = req.body.actor
+  Movie.find({ actor: itemActor }, (err, items) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    if (!items) {
+      return res.status(404).send(`Item with actor '${itemActor}' was not found.`)
+    }
+    return res.status(200).send(items)
   })
 })
 
