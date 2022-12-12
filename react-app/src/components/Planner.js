@@ -117,8 +117,17 @@ export default class Planner extends Component {
         region: '',
         actor: ''
       })
-    } else {
+    } else if (this.state.button === 1) {
       axios.post('http://localhost:5500/delete-movie', newMovie).then(res => console.log(res.data))
+      this.setState({
+        name: '',
+        length: 0,
+        year: 0,
+        genre: '',
+        region: '',
+        actor: ''
+      })
+    } else {
       this.setState({
         name: '',
         length: 0,
