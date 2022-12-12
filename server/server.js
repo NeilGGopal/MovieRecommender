@@ -198,6 +198,19 @@ app.post('/get-movies-from-actor', async (req, res) => {
   })
 })
 
+app.post('/get-movies-from-name', async (req, res) => {
+  const itemName = req.body.name
+  Movie.find({ name: itemName }, (err, items) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+    if (!items) {
+      return res.status(404).send(`Item with name '${itemName}' was not found.`)
+    }
+    return res.status(200).send(items)
+  })
+})
+
 app.get('/find-all-movies', (req, res) => {
   Movie.find((err, item) => {
     if (err) {

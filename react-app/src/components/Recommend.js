@@ -95,7 +95,36 @@ export default class Recommend extends Component {
     } else if (this.state.button === 3) {
       this.getFilter(mainTable, url)
     } else {
-      this.getFilter(mainTable, url)
+      url = 'http://localhost:5500/get-movies-from-name/'
+      const filter = {
+        name: document.getElementById('filter-input').value
+      }
+      console.log(filter.name)
+      axios.post(url, filter).then(
+        res => res.data.forEach((movie) => {
+          console.log(movie)
+          const row = document.createElement("tr")
+          const currName = document.createElement("td")
+          currName.innerText = movie.name
+          const currLength = document.createElement("td")
+          currLength.innerText = movie.length
+          const currYear = document.createElement("td")
+          currYear.innerText = movie.year
+          const currGenre = document.createElement("td")
+          currGenre.innerText = movie.genre
+          const currRegion = document.createElement("td")
+          currRegion.innerText = movie.region
+          const currActor = document.createElement("td")
+          currActor.innerText = movie.actor
+          row.appendChild(currName)
+          row.appendChild(currLength)
+          row.appendChild(currYear)
+          row.appendChild(currGenre)
+          row.appendChild(currRegion)
+          row.appendChild(currActor)
+          mainTable.appendChild(row)
+        })
+      )
     }
   }
 
@@ -113,6 +142,9 @@ export default class Recommend extends Component {
           &nbsp;
           &nbsp;
           <button className="btn btn-outline-danger" type="submit" onClick={() => (this.setState({ button: 3 }))}>Region</button>
+          &nbsp;
+          &nbsp;
+          <button className="btn btn-outline-danger" type="submit" onClick={() => (this.setState({ button: 4 }))}>Name</button>
           <br></br>
           <br></br>
         </form>
