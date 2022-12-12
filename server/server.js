@@ -149,6 +149,7 @@ app.get('/get-india', (req, res) => {
   return res.status(200).send(indiaQuery.results)
 })
 
+// Stored Procedures | Endpoints
 app.get('/get-actor', (req, res) => {
   const itemName = req.body.name
   const itemMovie = req.body.movie
