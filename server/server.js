@@ -113,6 +113,42 @@ app.get('/get-animation', (req, res) => {
   return res.status(200).send(animationQuery.results)
 })
 
+const unitedStatesQuery = { region: 'United States' }
+Movie.find(unitedStatesQuery, (err, items) => {
+  if (err) throw err
+  unitedStatesQuery.results = items
+})
+app.get('/get-united-states', (req, res) => {
+  return res.status(200).send(unitedStatesQuery.results)
+})
+
+const unitedKingdomQuery = { region: 'United Kingdom' }
+Movie.find(unitedKingdomQuery, (err, items) => {
+  if (err) throw err
+  unitedKingdomQuery.results = items
+})
+app.get('/get-united-kingdom', (req, res) => {
+  return res.status(200).send(unitedKingdomQuery.results)
+})
+
+const australiaQuery = { region: 'Australia' }
+Movie.find(australiaQuery, (err, items) => {
+  if (err) throw err
+  australiaQuery.results = items
+})
+app.get('/get-australia', (req, res) => {
+  return res.status(200).send(australiaQuery.results)
+})
+
+const indiaQuery = { region: 'India' }
+Movie.find(indiaQuery, (err, items) => {
+  if (err) throw err
+  indiaQuery.results = items
+})
+app.get('/get-india', (req, res) => {
+  return res.status(200).send(indiaQuery.results)
+})
+
 app.get('/get-actor', (req, res) => {
   const itemName = req.body.name
   const itemMovie = req.body.movie

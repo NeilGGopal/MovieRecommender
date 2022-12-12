@@ -31,7 +31,7 @@ export default class Recommend extends Component {
       mainTable.removeChild(mainTable.lastElementChild)
     }
     if (this.state.button === 1 | this.state.button === 3 | this.state.button === 4) {
-      const url = 'http://localhost:5500/get-' + document.getElementById('filter-input').value.toLowerCase() + '/'
+      const url = 'http://localhost:5500/get-' + document.getElementById('filter-input').value.replace(' ', '-').toLowerCase() + '/'
       axios.get(url).then(
         res => res.data.forEach((movie) => {
           console.log(movie)
