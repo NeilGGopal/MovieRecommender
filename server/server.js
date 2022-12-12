@@ -128,6 +128,7 @@ app.get('/find-all-movies', (req, res) => {
 })
 
 app.post('/create', async (req, res) => {
+  // movie to movie database
   const movie = {}
   movie.name = req.body.name
   movie.length = req.body.length
@@ -136,9 +137,31 @@ app.post('/create', async (req, res) => {
   movie.region = req.body.region
   movie.actor = req.body.actor
   const movieModel = new Movie(movie)
+
+  // actor to actor database
+  const actor = {}
+  actor.name = req.body.actor
+  const actorModel = new Actor(actor)
+
+  // region to region database
+  const region = {}
+  region.name = req.body.region
+  const regionModel = new Region(region)
+
+  // region to genre database
+  const genre = {}
+  genre.name = req.body.genre
+  const genreModel = new Genre(genre)
+  
+  await regionModel.save()
+  await actorModel.save()
   await movieModel.save()
+  await genreModel.save()
   res.header('Access-Control-Allow-Origin')
+  res.json(actorModel)
   res.json(movieModel)
+  res.json(regionModel)
+  res.json(genreModel)
 })
 
 app.post('/delete-movie', (req, res) => {
